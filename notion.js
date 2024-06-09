@@ -24,10 +24,9 @@ async function pageToMD(id, title, tags, createdTime) {
 
     const fileName = createdTimeDate.toString() + "-" + title.replace(" ", "_") + ".md";
 
-    fs.mkdir("./posts", { recursive: true }, (err) => {
-        if (err) throw err;
-    });
-    fs.writeFile(`./posts/${fileName}`, mdString.parent, (err) => console.log(err));
+    fs.writeFile(`/home/runner/work/gbtwld.github.io/gbtwld.github.io/_posts/${fileName}`, mdString.parent, (err) =>
+        console.log(err)
+    );
 }
 
 async function convertPosts() {
